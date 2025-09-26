@@ -230,6 +230,7 @@ class _DashBoardState extends State<DashBoard> {
                   width: double.maxFinite,
                   height: MediaQuery.heightOf(context) / 1.5,
                   child: Card(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
                     child: Column(
                       children: [
                         Padding(
