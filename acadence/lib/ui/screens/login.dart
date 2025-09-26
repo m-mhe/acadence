@@ -48,8 +48,8 @@ class _LoginState extends State<Login> {
                   Padding(
                     padding: EdgeInsets.only(
                       top: (MediaQuery.heightOf(context) / 5),
-                      left: 16,
-                      right: 16,
+                      left: MediaQuery.sizeOf(context).width / 30,
+                      right: MediaQuery.sizeOf(context).width / 30,
                     ),
                     child: TextField(
                       style: TextStyle(
@@ -79,10 +79,10 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 16,
-                      left: 16,
-                      right: 16,
+                    padding:  EdgeInsets.only(
+                      top: MediaQuery.sizeOf(context).width / 30,
+                      left: MediaQuery.sizeOf(context).width / 30,
+                      right: MediaQuery.sizeOf(context).width / 30,
                     ),
                     child: TextField(
                       style: TextStyle(
@@ -112,10 +112,10 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 16,
-                      left: 16,
-                      right: 16,
+                    padding:  EdgeInsets.only(
+                      top: MediaQuery.sizeOf(context).width / 30,
+                      left: MediaQuery.sizeOf(context).width / 30,
+                      right: MediaQuery.sizeOf(context).width / 30,
                     ),
                     child: DropdownMenu(
                       controller: null,
@@ -145,7 +145,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding:  EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width / 30),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushAndRemoveUntil(
@@ -155,7 +155,7 @@ class _LoginState extends State<Login> {
                             },
                           ),
                           (Route<dynamic> route) => false,
-                        );
+                        );//or // Get.offAll(Course(DashBoard());
                       },
                       child: Text(
                         "LogIn",

@@ -1,7 +1,11 @@
+import 'package:acadence/ui/screens/course.dart';
 import 'package:acadence/ui/theme/light_theme_colors.dart';
 import 'package:acadence/ui/widgets/common_app_bar.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../widgets/common_drawer.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
@@ -15,7 +19,7 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: commonAppBar(context, "Dashboard"),
-      endDrawer: Drawer(),
+      endDrawer: CommonDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(MediaQuery.sizeOf(context).width / 30),
@@ -55,7 +59,6 @@ class _DashBoardState extends State<DashBoard> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3),
                           ),
-                          color: LightThemeColors.mainColor,
                           child: Center(
                             child: Text(
                               "CGPA: 3.81",
@@ -80,7 +83,6 @@ class _DashBoardState extends State<DashBoard> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(3),
                           ),
-                          color: LightThemeColors.mainColor,
                           child: Center(
                             child: Text(
                               "Total Credit: 83",
@@ -105,7 +107,6 @@ class _DashBoardState extends State<DashBoard> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(7),
                     ),
-                    color: LightThemeColors.mainColor,
                     child: Column(
                       children: [
                         Padding(
@@ -229,7 +230,6 @@ class _DashBoardState extends State<DashBoard> {
                   width: double.maxFinite,
                   height: MediaQuery.heightOf(context) / 1.5,
                   child: Card(
-                    color: LightThemeColors.mainColor,
                     child: Column(
                       children: [
                         Padding(
@@ -249,13 +249,13 @@ class _DashBoardState extends State<DashBoard> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 5),
+                                padding: const EdgeInsets.only(left: 10),
                                 child: SizedBox(
-                                  width: MediaQuery.widthOf(context) / 2,
-                                  height: MediaQuery.widthOf(context) / 2,
+                                  width: (MediaQuery.heightOf(context) / 2) / 2.5,
+                                  height: (MediaQuery.heightOf(context) / 2) / 2.5,
                                   child: PieChart(
                                     PieChartData(
-                                      centerSpaceRadius: 40,
+                                      //centerSpaceRadius: 30,
                                       sections: [
                                         PieChartSectionData(
                                           value: (10 / 12) * 100,
@@ -332,9 +332,14 @@ class _DashBoardState extends State<DashBoard> {
                           child: ListView.builder(
                             itemCount: 8,
                             itemBuilder: (BuildContext context, int i) {
-                              return ListTile(
-                                title: Text("Course ${i+1}", style: TextStyle(color: LightThemeColors.accentColor, fontWeight: FontWeight.w500),),
-                                subtitle: Text("Present: 83%, Absent: 17%", style: TextStyle(color: LightThemeColors.accentColor.withAlpha(150)),),
+                              return InkWell(
+                                onTap: (){
+                                  Get.to(Course(courseTitle: "Course ${i+1}"));
+                                },
+                                child: ListTile(
+                                  title: Text("Course ${i+1}", style: TextStyle(color: LightThemeColors.accentColor, fontWeight: FontWeight.w500),),
+                                  subtitle: Text("Present: 83%, Absent: 17%", style: TextStyle(color: LightThemeColors.accentColor.withAlpha(150)),),
+                                ),
                               );
                             },
                           ),
