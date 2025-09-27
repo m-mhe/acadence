@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
                       top: (MediaQuery.heightOf(context) / 10),
                     ),
                     child: Text(
-                      "LogIn",
+                      "University Name",
                       style: TextStyle(
                         color: LightThemeColors.mainColor,
                         fontSize: 24,
@@ -63,18 +63,7 @@ class _LoginState extends State<Login> {
                           color: LightThemeColors.deepMainColor,
                         ),
                         enabled: true,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: LightThemeColors.accentColor,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: BorderSide(
-                            color: LightThemeColors.accentColor,
-                            width: 1.5,
-                          ),
-                        ),
+
                       ),
                     ),
                   ),
@@ -96,18 +85,7 @@ class _LoginState extends State<Login> {
                           color: LightThemeColors.deepMainColor,
                         ),
                         enabled: true,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: LightThemeColors.accentColor,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(7),
-                          borderSide: BorderSide(
-                            color: LightThemeColors.accentColor,
-                            width: 1.5,
-                          ),
-                        ),
+
                       ),
                     ),
                   ),
@@ -118,6 +96,12 @@ class _LoginState extends State<Login> {
                       right: MediaQuery.sizeOf(context).width / 30,
                     ),
                     child: DropdownMenu(
+                      inputDecorationTheme: InputDecorationTheme(
+                        contentPadding: EdgeInsets.all(5),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.transparent),
+                        ),
+                      ),
                       controller: null,
                       initialSelection: 0,
                       onSelected: (v) {

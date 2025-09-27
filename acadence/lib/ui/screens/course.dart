@@ -84,6 +84,7 @@ class Course extends StatelessWidget {
                     (MediaQuery.sizeOf(context).width / 30 * 2)),
                 height: 50,
                 child: Card(
+                  color: LightThemeColors.mainColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(3),
                   ),
